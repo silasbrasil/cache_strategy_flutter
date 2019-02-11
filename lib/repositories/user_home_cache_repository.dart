@@ -26,8 +26,6 @@ class UsersHomeCacheRepository {
     final jsonRepository = repository.toJson();
     final strRepository = jsonEncode(jsonRepository);
 
-    await prefs.setString(key, strRepository);
-
-    return true;
+    return await prefs.setString(key, strRepository);
   }
 }
